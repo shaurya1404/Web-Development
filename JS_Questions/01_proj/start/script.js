@@ -18,7 +18,7 @@ function currentTime() {
 
     }
 
-    now.toLocaleDateString(undefined, options); // undefined locale means it will use the browser's default locale timezone  which ensures the date is displayed correctly based on the user's location
+    dateElement.innerText = now.toLocaleDateString(undefined, options); // undefined locale means it will use the browser's default locale timezone  which ensures the date is displayed correctly based on the user's location
 }
 
 setInterval(() => { // Update the time every second using setInterval
