@@ -35,8 +35,8 @@ console.log("\n");
 
 if(!Array.prototype.myReduce) {
     Array.prototype.myReduce = function (callback, init) {
-            let acc = init || this[0] // if init != 0, null, undefined, then use init. else, use this[0]
-            const startIdx = (acc == init ? 1 : 0)
+            let acc = init || this[0] // If init != 0, null, undefined, then use init. Else, use this[0]
+            const startIdx = (acc == init ? 0 : 1) // Start index to iterate array will depend on whther initial vlaue is given or not
             for(i = startIdx; i < this.length; i++){
                 acc = callback(acc, this[i]);
             }
@@ -47,3 +47,20 @@ if(!Array.prototype.myReduce) {
 
 let reduced = arr.myReduce((acc, curr) => acc * curr);
 console.log(reduced);
+
+//Q. Write a polyfill for the .filter() function
+
+if(!Array.prototype.myFilter) {
+    Array.prototype.myFilter = function (cb) {
+        let res = [];
+        for(i = 0; i < this.length; i++){
+            if(cb(this[i])){
+                res.push(this[i]);
+            }
+        }
+        return res
+    }
+}
+
+let filtered = arr.myFilter((x) => x > 3);
+console.log(filtered);
