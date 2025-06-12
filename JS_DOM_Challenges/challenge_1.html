@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Light Bulb Toggle</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #121212;
+      color: #121212;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    .light-mode {
+      background-color: #f0f0f0;
+      color: #f0f0f0;
+    }
+
+    .bulb {
+      width: 120px;
+      height: 180px;
+      background-color: gray;
+      border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+      position: relative;
+      box-shadow: none;
+      transition: background-color 0.5s, box-shadow 0.5s;
+    }
+
+    .on {
+      background-color: gold;
+      box-shadow: 0 0 30px 10px gold;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: inherit;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="bulb" class="bulb"></div>
+  <button id="toggleBtn">Turn On</button>
+
+  <script>
+    const bulb = document.getElementById('bulb');
+    const button = document.getElementById('toggleBtn');
+    const body = document.body;
+
+    let isOn = false;
+
+    button.addEventListener('click', () => {
+      isOn = !isOn;
+
+      bulb.classList.toggle('on', isOn);
+      body.classList.toggle('light-mode', isOn);
+
+      button.textContent = isOn ? 'Turn Off' : 'Turn On';
+    });
+  </script>
+</body>
+</html>

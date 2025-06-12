@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change My Color</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      transition: color 0.3s ease;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.2s ease;
+    }
+
+    .red { 
+        background-color: red; 
+    }
+    .green { 
+        background-color: green; 
+    }
+    .blue { 
+        background-color: blue; 
+    }
+    .purple { 
+        background-color: purple; 
+    }
+    .reset {
+      background-color: gray;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="heading">Change My Color!</h1>
+
+  <div class="buttons">
+    <button class="red" onclick="changeColor('red')">Red</button>
+    <button class="green" onclick="changeColor('green')">Green</button>
+    <button class="blue" onclick="changeColor('blue')">Blue</button>
+    <button class="purple" onclick="changeColor('purple')">Purple</button>
+    <button class="reset" onclick="changeColor('black')">Reset</button>
+  </div>
+
+  <script>
+    const heading = document.getElementById('heading');
+
+    function changeColor(color) {
+      heading.style.color = color;
+    }
+  </script>
+
+</body>
+</html>
