@@ -62,18 +62,22 @@
   <h1 id="heading">Change My Color!</h1>
 
   <div class="buttons">
-    <button class="red" onclick="changeColor('red')">Red</button>
-    <button class="green" onclick="changeColor('green')">Green</button>
-    <button class="blue" onclick="changeColor('blue')">Blue</button>
-    <button class="purple" onclick="changeColor('purple')">Purple</button>
-    <button class="reset" onclick="changeColor('black')">Reset</button>
+    <button class="red">Red</button>
+    <button class="green">Green</button>
+    <button class="blue">Blue</button>
+    <button class="purple">Purple</button>
+    <button class="reset">Reset</button>
   </div>
 
   <script>
+    const btns = document.querySelectorAll("button");
     const heading = document.getElementById('heading');
 
-    function changeColor(color) {
-      heading.style.color = color;
+    for(let btn of btns) {
+      btn.addEventListener("click", () => {
+        const color = btn.classList.contains("reset") ? "" : btn.className
+        heading.style.backgroundColor = color
+      })
     }
   </script>
 
