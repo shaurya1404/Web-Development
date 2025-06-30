@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: white;
+    color: black;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.board {
+    background-color: bisque;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 70vh;
+    width: 200px;
+    padding: 10px;
+}
+
+.item {
+    border: 2px solid black;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item:hover {
+    background-color: black;
+    color: white;
+}
+
+#add-task-btn {
+    margin-left: 400px;
+}
+
+.deleteBtn {
+    cursor: pointer;
+    width: 20px;
+}
+
+.editBtn {
+    cursor: pointer;
+    margin-right: -30px;
+    padding: 0 3px 0 3px;
+}
