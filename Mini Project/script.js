@@ -65,8 +65,8 @@ addTaskBtn.addEventListener('click', () => {
 
     newItem.setAttribute('draggable', true);
 
-    attachEditEvent(editBtn);
-    attachDragEvents(newItem); // dynamically added elements will need their drag events attached within the event listener itself
+    attachEditEvent(editBtn); // dynamically added elements will need their events attached within the event listener itself
+    attachDragEvents(newItem);
     attachDeleteEvent(newBtn);
 })
 
@@ -78,8 +78,7 @@ allBoards.forEach((board) => {
     board.addEventListener('dragover', () => {
         const flyingEl = document.querySelector(".flying"); // Since "flying" is a dynamically changing class, selecting the element with "flying" in the event listener itself
         console.log('Currently element', flyingEl, 'is hovering over the board', board);
-        board.appendChild(flyingEl)
-
+        board.appendChild(flyingEl);
     })
 })
 
