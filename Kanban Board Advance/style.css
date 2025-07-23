@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222831;
+}
+
+.board {
+    display: flex;
+    gap: 20px;
+}
+
+.column {
+    background-color: #393e46;
+    width: 300px;
+    min-height: 400px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+.column h2{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tasks{
+    min-height: 400px;
+}
+
+.task-input {
+    width: 100%;
+    padding: 10px 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.add-task {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 4px;
+    border: none;
+    background-color: #d89216;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-task:hover {
+    background-color: #b2770f;
+}
+
+.card {
+    background-color: #e1d89f;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: #000000;
+    cursor: grab;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.context-menu {
+    background-color: #fff;
+    padding: 10px 0px;
+    border-radius: 4px;
+    display: none;
+    position: absolute;
+}
+
+.context-menu ul li {
+    list-style: none;
+    padding: 5px 20px;
+    color: #333;
+    cursor: pointer;
+}
+.context-menu ul li:hover {
+    background-color: #cbc9c9;
+}
+
+.task-date {
+    display: block;
+    text-align: end;
+    font-size: 12px;
+    font-style: italic;
+}
