@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 
-export const loggedIn = async (req, res, next) => {
+export const isLoggedIn = async (req, res, next) => {
     // access cookie
     // extract token from cookie
     //extract payload(data) from token
