@@ -3,7 +3,6 @@ import crypto from "crypto";
 import nodemailer from 'nodemailer';
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken"
-import { now } from "mongoose";
 
 const registerUser = async (req, res) => {
     // get data 

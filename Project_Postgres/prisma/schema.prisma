@@ -5,7 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js" // prisma is used to make the initial connection to the database. whereas, prisma-client is the code that gives access to the DB and its many functions
+  provider = "prisma-client-js"
   output   = "../generated/prisma"
 }
 
@@ -15,15 +15,15 @@ datasource db {
 }
 
 model User {
-  id                  String   @id @default(cuid()) // npx prisma format - to format the model (only changes aesthetics)
+  id                  String   @id @default(cuid())
   name                String
   email               String   @unique
   password            String
-  role                String   @default("User")
+  role                String   @default("user")
   isVerified          Boolean  @default(false)
   verificationToken   String?
   passwordResetToken  String?
-  passwordResetExpiry String?
+  passwordExpiryToken String?
   createdAt           DateTime @default(now())
   updatedAt           DateTime @default(now())
 }
