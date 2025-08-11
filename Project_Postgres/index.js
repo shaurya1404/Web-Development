@@ -2,9 +2,9 @@ import express, { urlencoded } from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import router from './routes/user_routes';
+import router from './routes/user_routes.js';
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -21,9 +21,13 @@ app.use(cors({
 app.use("/api/v2/users", router);
 
 app.get("/", (req, res) => {
-    res.status(200);
+    console.log("working");
+    res.status(200).json({
+        success: "true",
+        message: "working"
+    });
 })
 
 app.listen(port, () => {
     console.log(`Backend is listening on port: ${port}`);
-})
+});
