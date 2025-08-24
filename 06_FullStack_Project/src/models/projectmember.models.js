@@ -17,3 +17,5 @@ const projectMemberSchema = new mongoose.Schema({
         default: UserRoleEnums.MEMBER
     }
 }, {timestamps: true})
+
+export const ProjectMember = mongoose.model("ProjectMember", projectMemberSchema);
