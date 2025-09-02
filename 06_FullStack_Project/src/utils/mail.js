@@ -28,7 +28,7 @@ const sendMailWithMailgen = async (options) => {
     });
 
     const email = { // Construct the message object according to Nodemailer's syntax
-        from: 'randomTestingEmail@example.com',
+        from: process.env.MAILTRAP_SMTP_SENDEREMAIL,
         to: options.email,
         subject: options.subject,
         text: emailText,
@@ -78,3 +78,24 @@ const forgotPasswordMailgenContentGenerator = (username, passwordResetUrl) => { 
         }
     }
 }
+
+const resendEmailVerificationMailgenContentGenerator = (username, verificationUrl) => { // Generating contents of the email for resending the email verification which will be sent to emailHTML and emailPlainText in mailgenConfigure
+    return {
+        body: {
+            name: username,
+            intro: 'We received a request to resend the email verification link',
+            action: {
+                instructions: 'To get started with our App, please click here:',
+                button: {
+                    color: '#d81212ff', // Optional action button color
+                    text: 'Verify Email',
+                    link: verificationUrl
+                }
+            },
+            outro: 'Need help, or have questions? Just reply to this email, we\'d love to help.'
+        }
+    }
+}
+
+
+export { sendMailWithMailgen, emailVerificationMailgenContentGenerator, forgotPasswordMailgenContentGenerator, resendEmailVerificationMailgenContentGenerator } 

@@ -2,7 +2,7 @@ class ApiError extends Error {
   constructor(statusCode, message = "Something went wrong", errors, stack ="") {
     super(message); // Call parent constructor first
     this.statusCode = statusCode;
-    this.errors = errors
+    this.errors = errors || []
 
     // Maintains proper stack trace (only works in V8 engines like Node.js & Chrome)
     if (stack) {
