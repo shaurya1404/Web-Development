@@ -1,6 +1,6 @@
 class ApiError extends Error {
   constructor(statusCode, message = "Something went wrong", errors, stack ="") {
-    super(message); // Call parent constructor first
+    super(message); // Always call parent constructor first (Error(message) in this case)
     this.statusCode = statusCode;
     this.errors = errors || []
 

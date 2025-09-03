@@ -1,5 +1,5 @@
 export const UserRoleEnums = { // Object
-    ADMIN: "admin",
+    MEMBER: "member",
     PROJECT_ADMIN: "project_admin",
     USER: "user"
 }
